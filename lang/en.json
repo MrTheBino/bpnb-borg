@@ -1,0 +1,39 @@
+{
+  "BPNB_BORG": {
+    "Ability": {
+      "Str": { "long": "Strength", "abbr": "str" },
+      "Agl": { "long": "Agility", "abbr": "agl" },
+      "Prs": { "long": "Presence", "abbr": "prs" },
+      "Tgh": { "long": "Toughness", "abbr": "tgh" }
+    },
+    "SheetLabels": {
+      "Actor": "Bpnb_borg Actor Sheet",
+      "Item": "Bpnb_borg Item Sheet"
+    },
+    "Item": {
+      "Spell": {
+        "SpellLVL": "Level {level} Spells",
+        "AddLVL": "Add LVL {level}"
+      }
+    },
+    "Effect": {
+      "Source": "Source",
+      "Toggle": "Toggle Effect",
+      "Temporary": "Temporary Effects",
+      "Passive": "Passive Effects",
+      "Inactive": "Inactive Effects"
+    }
+  },
+
+  "TYPES": {
+    "Actor": {
+      "character": "Character",
+      "npc": "NPC"
+    },
+    "Item": {
+      "item": "Item",
+      "feature": "Feature",
+      "spell": "Spell"
+    }
+  }
+}
