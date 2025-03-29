@@ -8,12 +8,18 @@
           "min": 0,
           "max": 10
         },
-        "power": {
-          "value": 5,
+        "devils_luck": {
+          "value": 0,
           "min": 0,
-          "max": 5
+          "max": 10
         },
-        "biography": ""
+        "spell_cast_amount": {
+          "value": 0,
+          "min": 0,
+          "max": 0
+        },
+        "biography": "",
+        "gp": 0
       }
     },
     "character": {
@@ -23,6 +29,7 @@
           "value": 1
         }
       },
+      "class_name": "",
       "abilities": {
         "str": {
           "value": 0
@@ -40,14 +47,17 @@
     },
     "npc": {
       "templates": ["base"],
-      "cr": 0
+      "morale": 0,
+      "armour": "",
+      "attack": ""
     }
   },
   "Item": {
-    "types": ["item", "feature", "spell"],
+    "types": ["item", "feature", "spell","weapon","armour"],
     "templates": {
       "base": {
-        "description": ""
+        "description": "",
+        "gp": 0
       }
     },
     "item": {
@@ -56,12 +66,24 @@
       "weight": 0,
       "formula": "d20 + @str.mod + ceil(@lvl / 2)"
     },
+    "weapon": {
+      "templates": ["base"],
+      "ranged": false,
+      "needs_ammo": false,
+      "ammunition": 0,
+      "damage": "1d4"
+    },
     "feature": {
       "templates": ["base"]
     },
     "spell": {
       "templates": ["base"],
       "spellLevel": 1
+    },
+    "armour": {
+      "templates": ["base"],
+      "level": 1,
+      "dice": "d2"
     }
   }
 }

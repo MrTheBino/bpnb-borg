@@ -20,10 +20,10 @@
       "thumbnail": "systems/bpnb_borg/assets/anvil-impact.png"
     }
   ],
-  "version": "2.0.0",
+  "version": "0.0.1",
   "compatibility": {
-    "minimum": 13,
-    "verified": "13.388"
+    "minimum": 12,
+    "verified": "12.331"
   },
   "esmodules": ["module/bpnb_borg.mjs"],
   "styles": ["css/bpnb_borg.css"],

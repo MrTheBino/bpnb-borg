@@ -1,5 +1,8 @@
 {
   "BPNB_BORG": {
+    "RollDialog":{
+      "Roll": "Roll"
+    },
     "Ability": {
       "Str": { "long": "Strength", "abbr": "str" },
       "Agl": { "long": "Agility", "abbr": "agl" },
@@ -13,7 +16,13 @@
     "Item": {
       "Spell": {
         "SpellLVL": "Level {level} Spells",
-        "AddLVL": "Add LVL {level}"
+        "AddLVL": "Add LVL {level}",
+        "AddSpell": "Add Spell",
+        "Spells": "Spells"
+      },
+      "Weapon": {
+        "Melee": "Melee",
+        "Ranged": "Ranged"
       }
     },
     "Effect": {

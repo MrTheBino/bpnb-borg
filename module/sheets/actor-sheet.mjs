@@ -2,6 +2,7 @@ import {
   onManageActiveEffect,
   prepareActiveEffectCategories,
 } from '../helpers/effects.mjs';
+import { attackRollDialog } from '../roll_dialog.mjs';
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -80,6 +81,7 @@ export class Bpnb_borgActorSheet extends ActorSheet {
   _prepareCharacterData(context) {
     // Handle ability scores.
     for (let [k, v] of Object.entries(context.system.abilities)) {
+      console.log("translation key:" + k);
       v.label = game.i18n.localize(CONFIG.BPNB_BORG.abilities[k]) ?? k;
     }
   }
@@ -95,18 +97,9 @@ export class Bpnb_borgActorSheet extends ActorSheet {
     // Initialize containers.
     const gear = [];
     const features = [];
-    const spells = {
-      0: [],
-      1: [],
-      2: [],
-      3: [],
-      4: [],
-      5: [],
-      6: [],
-      7: [],
-      8: [],
-      9: [],
-    };
+    const spells = [];
+    const weapons = [];
+    const armour = [];
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
@@ -121,9 +114,15 @@ export class Bpnb_borgActorSheet extends ActorSheet {
       }
       // Append to spells.
       else if (i.type === 'spell') {
-        if (i.system.spellLevel != undefined) {
-          spells[i.system.spellLevel].push(i);
-        }
+        spells.push(i);
+      }
+      // Append to weapons
+      else if (i.type === 'weapon') {
+        weapons.push(i);
+      }
+      // Append to armour
+      else if (i.type === 'armour') {
+        armour.push(i);
       }
     }
 
@@ -131,6 +130,8 @@ export class Bpnb_borgActorSheet extends ActorSheet {
     context.gear = gear;
     context.features = features;
     context.spells = spells;
+    context.weapons = weapons;
+    context.armour = armour;
   }
 
   /* -------------------------------------------- */
@@ -144,6 +145,32 @@ export class Bpnb_borgActorSheet extends ActorSheet {
       const li = $(ev.currentTarget).parents('.item');
       const item = this.actor.items.get(li.data('itemId'));
       item.sheet.render(true);
+    });
+
+    html.on("click", ".post-item-description", (ev) => {
+      const li = $(ev.currentTarget).parents('.item');
+      const item = this.actor.items.get(li.data('itemId'));
+
+      let html = '<h2>' + item.name + '</h2>';
+      html += '<p>' + item.system.description + '</p>';
+      ChatMessage.create({
+        content: html,
+        sound: null,
+        speaker: ChatMessage.getSpeaker(item.actor)
+      });
+    });
+
+    html.on("change", ".item-ammunition", (ev) => {
+      const li = $(ev.currentTarget).parents('.item');
+      const item = this.actor.items.get(li.data('itemId'));
+      const newValue = parseInt(ev.currentTarget.value);
+      if (isNaN(newValue)) {
+        //ui.notifications.error("Invalid value for ammunition");
+        console.log("Invalid value for ammunition");
+        return;
+      }
+      item.update({ "system.ammunition": newValue });
+      return;
     });
 
     // -------------------------------------------------------------
@@ -222,25 +249,46 @@ export class Bpnb_borgActorSheet extends ActorSheet {
     const element = event.currentTarget;
     const dataset = element.dataset;
 
-    // Handle item rolls.
+    // Handle weapon rolls.
     if (dataset.rollType) {
-      if (dataset.rollType == 'item') {
-        const itemId = element.closest('.item').dataset.itemId;
-        const item = this.actor.items.get(itemId);
-        if (item) return item.roll();
+      if (dataset.rollType == 'weapon') {
+        const item = this.actor.items.get(dataset.itemId);
+        let label = item.name;
+        if (item) {
+          let rollFormula = "d20 +";
+
+          if (item.system.ranged) {
+            rollFormula += this.actor.system.abilities.prs.value;
+            label += " - Presence (Ranged) + " + this.actor.system.abilities.prs.value;;
+          } else {
+            rollFormula += this.actor.system.abilities.str.value;
+            label += " - Strength (Melee) + " + this.actor.system.abilities.str.value;;
+          }
+          attackRollDialog(this.actor, dataset.itemId, rollFormula, label);
+        }
+      } else if (dataset.rollType == "spell") {
+        const item = this.actor.items.get(dataset.itemId);
+        let label = item.name;
+        if (item) {
+          let rollFormula = "d20 +";
+          rollFormula += this.actor.system.abilities.prs.value;
+          label += " - Presence (Magic) + " + this.actor.system.abilities.prs.value;;
+          attackRollDialog(this.actor, dataset.itemId, rollFormula, label);
+        }
       }
     }
 
     // Handle rolls that supply the formula directly.
     if (dataset.roll) {
-      let label = dataset.label ? `[ability] ${dataset.label}` : '';
+      /*let label = dataset.label ? `[ability] ${dataset.label}` : '';
       let roll = new Roll(dataset.roll, this.actor.getRollData());
       roll.toMessage({
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         flavor: label,
         rollMode: game.settings.get('core', 'rollMode'),
       });
-      return roll;
+      return roll;*/
+      attackRollDialog(this.actor, null, dataset.roll, dataset.label);
     }
   }
 }

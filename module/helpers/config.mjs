@@ -6,18 +6,14 @@ export const BPNB_BORG = {};
  */
 BPNB_BORG.abilities = {
   str: 'BPNB_BORG.Ability.Str.long',
-  dex: 'BPNB_BORG.Ability.Dex.long',
-  con: 'BPNB_BORG.Ability.Con.long',
-  int: 'BPNB_BORG.Ability.Int.long',
-  wis: 'BPNB_BORG.Ability.Wis.long',
-  cha: 'BPNB_BORG.Ability.Cha.long',
+  agl: 'BPNB_BORG.Ability.Agl.long',
+  prs: 'BPNB_BORG.Ability.Prs.long',
+  tgh: 'BPNB_BORG.Ability.Tgh.long',
 };
 
 BPNB_BORG.abilityAbbreviations = {
   str: 'BPNB_BORG.Ability.Str.abbr',
-  dex: 'BPNB_BORG.Ability.Dex.abbr',
-  con: 'BPNB_BORG.Ability.Con.abbr',
-  int: 'BPNB_BORG.Ability.Int.abbr',
-  wis: 'BPNB_BORG.Ability.Wis.abbr',
-  cha: 'BPNB_BORG.Ability.Cha.abbr',
+  agl: 'BPNB_BORG.Ability.Agl.abbr',
+  prs: 'BPNB_BORG.Ability.Prs.abbr',
+  tgh: 'BPNB_BORG.Ability.Tgh.abbr',
 };
