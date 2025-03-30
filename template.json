@@ -49,7 +49,9 @@
       "templates": ["base"],
       "morale": 0,
       "armour": "",
-      "attack": ""
+      "attack": "",
+      "captured_gp": 0,
+      "dead_gp": 0
     }
   },
   "Item": {

@@ -23,23 +23,41 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.cr" class="resource-label">Armour</label>
+          <label for="system.cr" class="resource-label rollable" data-roll="{{system.armour}}" data-label="Armour roll - {{actor.name}}">Armour</label>
           <div class="resource-content flexrow flex-center flex-between">
             <input type="text" name="system.armour" value="{{system.armour}}" data-dtype="String"/>
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.cr" class="resource-label">Morale</label>
+          <label for="system.cr" class="resource-label rollable" data-roll="2d6" data-label="Morale check roll - {{actor.name}} - Morale {{system.morale}}">Morale</label>
           <div class="resource-content flexrow flex-center flex-between">
             <input type="text" name="system.morale" value="{{system.morale}}" data-dtype="Number"/>
           </div>
         </div>
 
       <div class="resource flex-group-center">
-          <label for="system.cr" class="resource-label">Attack</label>
+          <label for="system.cr" class="resource-label rollable" data-roll="{{system.attack}}" data-label="Damage roll - {{actor.name}}">Attack</label>
           <div class="resource-content flexrow flex-center flex-between">
             <input type="text" name="system.attack" value="{{system.attack}}" data-dtype="String"/>
+          </div>
+        </div>
+      </div>
+      <div class="resources grid grid-4col">
+
+
+
+        <div class="resource flex-group-center">
+          <label for="system.cr" class="resource-label">Dead GP</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.dead_gp" value="{{system.dead_gp}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.cr" class="resource-label">Captured GP</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.captured_gp" value="{{system.captured_gp}}" data-dtype="Number"/>
           </div>
         </div>
       </div>
