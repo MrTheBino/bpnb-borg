@@ -1,4 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+@font-face {
+  font-family: "JSL Blackletter";
+  src: url("../fonts/JBLACK.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("../fonts/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat-SemiBold";
+  src: url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("../fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Old Newspaper Font";
+  src: url("../fonts/Old Newspaper Font.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Global styles */
 .window-app {
   font-family: "Roboto", sans-serif;
@@ -363,4 +395,22 @@
 }
 .bpnb_borg .effects .item .effect-controls {
   border: none;
+}
+
+.section-header {
+  font-family: "Old Newspaper Font", sans-serif;
+}
+
+.tab-header {
+  font-family: "JSL Blackletter", sans-serif;
+  font-size: large;
+}
+
+.resource-label{
+  font-family: "Old Newspaper Font", sans-serif;
+  font-weight: bold;
+}
+
+.attribute-label{
+  font-family: "Old Newspaper Font", sans-serif;
 }
