@@ -20,7 +20,7 @@
       "thumbnail": "systems/bpnb_borg/assets/anvil-impact.png"
     }
   ],
-  "version": "0.0.2",
+  "version": "0.0.3",
   "compatibility": {
     "minimum": 12,
     "verified": "12.331"
