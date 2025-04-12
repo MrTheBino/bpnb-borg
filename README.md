@@ -9,7 +9,7 @@ are so light, you won't need it.
 
 ## Manifest-URL to install the system
 
-    https://github.com/MrTheBino/bpnb_borg/releases/latest/download/module.json
+    https://github.com/MrTheBino/bpnb_borg/releases/latest/download/system.json
     
 ## License & Copyright
 
