@@ -13,7 +13,7 @@ The system background image is used with friendly permission of Benjamin Tobitt
 
 ## Manifest-URL to install the system
 
-    https://github.com/MrTheBino/bpnb_borg/releases/latest/download/system.json
+    https://github.com/MrTheBino/bpnb-borg/releases/latest/download/system.json
     
 ## License & Copyright
 
