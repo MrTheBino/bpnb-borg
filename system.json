@@ -1,5 +1,5 @@
 {
-  "id": "bpnb_borg",
+  "id": "bpnb-borg",
   "title": "Black Powder & Brimstone",
   "description": "The Black Powder & Brimstone system for FoundryVTT!",
   "authors": [
@@ -16,8 +16,8 @@
   "media": [
     {
       "type": "setup",
-      "url": "systems/bpnb_borg/assets/anvil-impact.png",
-      "thumbnail": "systems/bpnb_borg/assets/anvil-impact.png"
+      "url": "systems/bpnb-borg/assets/screen.png",
+      "thumbnail": "systems/bpnb-borg/assets/screen.png"
     }
   ],
   "version": "0.0.3",
@@ -39,7 +39,7 @@
   "socket": false,
   "manifest": "https://github.com/MrTheBino/bpnb_borg/releases/latest/download/system.json",
   "download": "https://github.com/MrTheBino/bpnb_borg/releases/latest/download/system.zip",
-  "background": "systems/bpnb_borg/assets/anvil-impact.png",
+  "background": "systems/bpnb-borg/assets/screen.png",
   "gridDistance": 5,
   "gridUnits": "ft",
   "primaryTokenAttribute": "health",

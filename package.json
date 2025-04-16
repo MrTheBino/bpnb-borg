@@ -1,5 +1,5 @@
 {
-  "name": "bpnb_borg",
+  "name": "bpnb-borg",
   "version": "2.0.0",
   "description": "CSS compiler for the Bpnb_borg system",
   "scripts": {

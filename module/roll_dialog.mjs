@@ -24,7 +24,7 @@ export async function attackRollDialog(actor,itemId,data_roll,label){
         label
       };
       const html = await renderTemplate(
-        "systems/bpnb_borg/templates/dialogs/roll_dialog.hbs",
+        "systems/bpnb-borg/templates/dialogs/roll_dialog.hbs",
         rollResult
       );
 

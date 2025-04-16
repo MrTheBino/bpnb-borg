@@ -9,6 +9,8 @@ Get your copy at https://freeleaguepublishing.com/games/black-powder-brimstone/
 This foundry system is a leightweight integration, this means almost no automation is integrated. The rules
 are so light, you won't need it.
 
+The system background image is used with friendly permission of Benjamin Tobitt
+
 ## Manifest-URL to install the system
 
     https://github.com/MrTheBino/bpnb_borg/releases/latest/download/system.json
