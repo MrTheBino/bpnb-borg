@@ -20,7 +20,7 @@
       "thumbnail": "systems/bpnb-borg/assets/screen.png"
     }
   ],
-  "version": "0.0.5",
+  "version": "0.0.6",
   "compatibility": {
     "minimum": 12,
     "verified": "12.331"

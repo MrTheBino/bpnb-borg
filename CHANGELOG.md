@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.0.5
+## 0.0.6
 
 - characters are now automaticly linked and friendly in the prototype token
   
