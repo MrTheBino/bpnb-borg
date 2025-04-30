@@ -23,7 +23,7 @@ export async function attackRollDialog(actor,itemId,data_roll,label){
         item,
         label
       };
-      const html = await renderTemplate(
+      const html = await foundry.applications.handlebars.renderTemplate(
         "systems/bpnb-borg/templates/dialogs/roll_dialog.hbs",
         rollResult
       );

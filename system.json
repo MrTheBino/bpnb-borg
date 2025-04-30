@@ -20,10 +20,10 @@
       "thumbnail": "systems/bpnb-borg/assets/screen.png"
     }
   ],
-  "version": "0.0.6",
+  "version": "0.0.7",
   "compatibility": {
-    "minimum": 12,
-    "verified": "12.331"
+    "minimum": 13,
+    "verified": "13.341"
   },
   "esmodules": ["module/bpnb_borg.mjs"],
   "styles": ["css/bpnb_borg.css"],
