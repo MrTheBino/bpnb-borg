@@ -1,5 +1,24 @@
 {
   "BPNB_BORG": {
+    "Labels":{
+      "DR": "DR",
+      "ATTACK": "Attack",
+      "VS": "Vs",
+      "Attack_Hit": "Hit",
+      "Attack_Fumble": "Fumble",
+      "Attack_Miss": "Miss",
+      "Attack_Crit": "Critical Hit",
+      "Damage": "Damage",
+      "Armor": "Armor",
+      "Damage_Done": "Damage Done",
+      "Defend": "Defend",
+      "Defend_Got_Hit": "Defense Failed!",
+      "Defend_Success": "Defense Success!",
+      "Defend_Critical_Success": "Critical Success!",
+      "Defend_Critical_Success_Action": "You gain a free attack on the attacker!",
+      "Defend_Fumble": "Fumble!",
+      "Defend_Fumble_Action": "You take double damage and your armor is reduced by one tier until it is repaired."
+    },
     "RollDialog":{
       "Roll": "Roll"
     },

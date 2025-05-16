@@ -419,3 +419,57 @@
   background: none;
   background-color: black;
 }*/
+
+.roll-card {
+  border: 1px solid black;
+}
+
+.roll-card .card-title {
+  font-family: "Old Newspaper Font", sans-serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.roll-card .roll-row {
+  border: 1px solid gray;
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.roll-card .roll-title {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.roll-card .roll-row span {
+  color: red;
+  font-size: 20px;
+}
+
+.roll-card .outcome-row {
+  font-family: "Old Newspaper Font", sans-serif;
+  font-size: 28px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.quick_action_button{
+  font-family: "Old Newspaper Font", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.btn_image{
+    display: inline;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 16px;
+}

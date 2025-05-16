@@ -2,7 +2,7 @@ import {
   onManageActiveEffect,
   prepareActiveEffectCategories,
 } from '../helpers/effects.mjs';
-import { attackRollDialog } from '../roll_dialog.mjs';
+import { attackRollDialog,attackRollDialogV2,defendRollDialog } from '../roll_dialog.mjs';
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -140,6 +140,34 @@ export class Bpnb_borgActorSheet extends ActorSheet {
   activateListeners(html) {
     super.activateListeners(html);
 
+    html.on('click','#action_short_rest',(ev) =>{
+      const actorRollData = this.actor.getRollData();
+      const attackRoll = new Roll("1d4", actorRollData);
+      attackRoll.evaluate().then((roll) => {
+        roll.toMessage({
+          speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+          flavor: "Short Rest - Heal for:",
+          rollMode: game.settings.get('core', 'rollMode'),
+        });
+      });
+    });
+
+    html.on('click','#action_long_rest',(ev) =>{
+      const actorRollData = this.actor.getRollData();
+      const attackRoll = new Roll("1d6", actorRollData);
+      attackRoll.evaluate().then((roll) => {
+        roll.toMessage({
+          speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+          flavor: "Long Rest - Heal for:",
+          rollMode: game.settings.get('core', 'rollMode'),
+        });
+      });
+    });
+
+    html.on('click','#action_defend',(ev) =>{
+      defendRollDialog(this.actor, this.actor.system.abilities.agl.value);
+    });
+
     // Render the item sheet for viewing/editing prior to the editable check.
     html.on('click', '.item-edit', (ev) => {
       const li = $(ev.currentTarget).parents('.item');
@@ -264,7 +292,7 @@ export class Bpnb_borgActorSheet extends ActorSheet {
             rollFormula += this.actor.system.abilities.str.value;
             label += " - Strength (Melee) + " + this.actor.system.abilities.str.value;;
           }
-          attackRollDialog(this.actor, dataset.itemId, rollFormula, label);
+          attackRollDialogV2(this.actor, dataset.itemId, rollFormula, label,item.system.damage);
         }
       } else if (dataset.rollType == "spell") {
         const item = this.actor.items.get(dataset.itemId);
@@ -272,7 +300,7 @@ export class Bpnb_borgActorSheet extends ActorSheet {
         if (item) {
           let rollFormula = "d20 +";
           rollFormula += this.actor.system.abilities.prs.value;
-          label += " - Presence (Magic) + " + this.actor.system.abilities.prs.value;;
+          label += " - Presence (Magic) + " + this.actor.system.abilities.prs.value;
           attackRollDialog(this.actor, dataset.itemId, rollFormula, label);
         }
       }
