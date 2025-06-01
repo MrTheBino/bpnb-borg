@@ -30,6 +30,7 @@
         }
       },
       "class_name": "",
+      "madness": 0,
       "abilities": {
         "str": {
           "value": 0

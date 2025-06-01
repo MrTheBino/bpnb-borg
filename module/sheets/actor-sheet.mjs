@@ -81,7 +81,7 @@ export class Bpnb_borgActorSheet extends ActorSheet {
   _prepareCharacterData(context) {
     // Handle ability scores.
     for (let [k, v] of Object.entries(context.system.abilities)) {
-      console.log("translation key:" + k);
+      //console.log("translation key:" + k);
       v.label = game.i18n.localize(CONFIG.BPNB_BORG.abilities[k]) ?? k;
     }
   }
