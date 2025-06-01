@@ -222,6 +222,7 @@ async function attackDialogCallbackV2(actor, html) {
     damageRoll,
     damageResult,
     totalDamage,
+    armorRoll,
     label
   }
   renderAttackRollCard(actor,rollResult)

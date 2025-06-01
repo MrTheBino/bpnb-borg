@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.8.1
+
+* armor roll didn't show up in chat message after a successfull attack
+
 ## 0.8
 
 * added new attacking roll dialog
